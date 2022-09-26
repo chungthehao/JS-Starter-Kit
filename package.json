@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "JavaScript development environment",
   "scripts": {
-    "prestart": "node buildScripts/startMessage.js",
-    "start": "node buildScripts/srcServer.js",
-    "share": "lt -p 3333 -s henry"
+    "predev": "node buildScripts/startMessage.js",
+    "dev": "node buildScripts/srcServer.js",
+    "share": "lt -p 3333 -s henry",
+    "start": "npm-run-all --parallel dev share"
   },
   "author": "Henry Chung",
   "license": "MIT",
