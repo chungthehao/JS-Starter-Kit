@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "JavaScript development environment",
   "scripts": {
-    "predev": "node buildScripts/startMessage.js",
-    "dev": "node buildScripts/srcServer.js",
+    "predev": "babel-node buildScripts/startMessage.js",
+    "dev": "babel-node buildScripts/srcServer.js",
     "share": "lt -p 3333 -s henry",
     "start": "npm-run-all --parallel dev share"
   },
