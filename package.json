@@ -6,7 +6,9 @@
     "predev": "babel-node buildScripts/startMessage.js",
     "dev": "babel-node buildScripts/srcServer.js",
     "share": "lt -p 3333 -s henry",
-    "start": "npm-run-all --parallel dev share"
+    "start": "npm-run-all --parallel dev share lint:watch",
+    "lint": "esw webpack.config.* src buildScripts --color",
+    "lint:watch": "npm run lint -- --watch"
   },
   "author": "Henry Chung",
   "license": "MIT",
