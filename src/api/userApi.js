@@ -1,9 +1,13 @@
+import getBaseUrl from "./baseUrl";
+
+const baseUrl = getBaseUrl();
+
 export const getUsers = () => {
   return get("users");
 };
 
 const get = (url) => {
-  return fetch(url)
+  return fetch(baseUrl + url)
     .then(onSuccess)
     .then((data) => data)
     .catch(onError);

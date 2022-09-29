@@ -6,12 +6,14 @@
     "predev": "babel-node buildScripts/startMessage.js",
     "dev": "babel-node buildScripts/srcServer.js",
     "share": "lt -p 3333 -s henry",
-    "start": "npm-run-all --parallel dev share lint:watch test:watch",
+    "start": "npm-run-all --parallel dev share lint:watch test:watch start-mock-api",
     "lint": "esw webpack.config.* src buildScripts --color",
     "lint:watch": "npm run lint -- --watch",
     "test": "mocha --reporter progress buildScripts/testSetup.js \"src/**/*.test.js\"",
     "test:watch": "npm run test -- --watch",
-    "generate-mock-data": "babel-node buildScripts/generateMockData.js"
+    "generate-mock-data": "babel-node buildScripts/generateMockData.js",
+    "prestart-mock-api": "npm run generate-mock-data",
+    "start-mock-api": "json-server --watch src/api/db.json --port 3001"
   },
   "author": "Henry Chung",
   "license": "MIT",
