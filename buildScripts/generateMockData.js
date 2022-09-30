@@ -6,10 +6,12 @@
 
 /* eslint-disable no-console */
 
-import { generate, extend } from "json-schema-faker";
+import jsf from "json-schema-faker";
 import { schema } from "./mockDataSchema";
 import fs from "fs";
 import chalk from "chalk";
+
+const { generate, extend } = jsf;
 
 // Extend JSF with a lib we want to use
 extend("faker", () => require("faker"));
